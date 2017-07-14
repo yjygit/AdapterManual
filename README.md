@@ -38,3 +38,21 @@ function(set) {
   return data;
 }
 ```
+
+**新闻列表适配**
+```javascript
+function(){
+  var r=[];
+  _$('#newsList > ul >li').each(function(){
+    r.push(
+      {
+        name:_$(this).find('a').attr('title'),
+        url:_$(this).find('a').attr('href'),
+        ctime:false,
+        pic:false
+      }
+    );
+  });
+  return r;
+}
+```
