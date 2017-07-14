@@ -56,3 +56,35 @@ function(){
   return r;
 }
 ```
+
+**点击图片控件后，弹出二维码图片**
+```javascript
+
+function()
+{
+  let data={
+    src:"http://hlzw-10002785.file.myqcloud.com/Upload/imgs/20170711/file_5964998eded45.png",
+    href:'',
+    title:false,
+    description:'',
+  };
+  setTimeout(()=>{
+    _$('#Img57772').click(()=>{
+      var oDiv = document.createElement('div');
+      oDiv.id="mask57772";
+      oDiv.innerHTML = '<span>X</span><img style="width: 50%;top: 100px;position: relative;display: block;margin: auto;" src="http://www.gzgov.gov.cn/images/E01201E6-6A96-409A-99D0-35520E0C4B35.png"/>';
+     	oDiv.onclick=function(e){
+      	_$('#mask57772').remove();
+      };
+      oDiv.style.position="fixed"
+      oDiv.style.top="0px";
+      oDiv.style.bottom="0px";
+      oDiv.style.width="100%";
+      oDiv.style.textAlign="center";
+      oDiv.style.background="rgba(0, 0, 0, 0.71)";
+      document.body.appendChild(oDiv);
+    });
+  },500);
+  return data;
+}
+```
