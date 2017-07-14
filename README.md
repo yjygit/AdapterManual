@@ -12,8 +12,8 @@
 
 > 在规则配置时，首先需要了解一下知识，不用担心，花少量时间，即可基本掌握.
 
-* [`[CSS]` CSS选择器](/css.md#类型判断)
-* [`[Regex]` 正则表达式](/regex.md#作用域)
+* [`[CSS]` CSS选择器](http://www.w3school.com.cn/cssref/css_selectors.asp)
+* [`[Regex]` 正则表达式](/regex.md)
 
 
 ## [规则配置代码片段]
