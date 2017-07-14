@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 如何适配
 > 本文档仅供客户查阅。
 
@@ -20,8 +19,22 @@
 ## [规则配置常见问题]
 > 您可以直接以下代码片段，完成您的转换.
 
-**常见问题**
-
-=======
-你好1
->>>>>>> origin/master
+**轮播图适配**
+```javascript
+function(set) {
+  var pic = window.pics.split("|");
+  var link = window.links.split("|");
+  var title = window.texts.split("|");
+  var data = [];
+  for (var i = 0; i < pic.length; i++) {
+    if (pic[i]) {
+      data.push({
+        src: pic[i],
+        title: title[i],
+        link: link[i]
+      });
+    }
+  }
+  return data;
+}
+```
