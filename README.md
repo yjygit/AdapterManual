@@ -21,6 +21,8 @@
 
 **轮播图适配**
 ```javascript
+一、原PC网站为Flash，但有js定义轮播图数组的情况
+
 function(set) {
   var pic = window.pics.split("|");
   var link = window.links.split("|");
@@ -36,6 +38,30 @@ function(set) {
     }
   }
   return data;
+}
+
+二、图片和说明不在一起定义
+
+function ()
+{
+  var r=[];
+  var pic=[];
+  _$("#pic > li").each(function() {
+    pic.push(
+      _$(this).find("img").attr("ysrc")
+    );
+  });
+  var i=0;
+  _$("#txt > li").each(function() {
+    r.push({
+      title:_$(this).find("a").text(),
+      link:_$(this).find("a").attr("href"),
+      src:pic[i]
+    });
+    i++;
+  });
+  
+  return r;
 }
 ```
 
