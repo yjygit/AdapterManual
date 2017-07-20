@@ -114,3 +114,34 @@ function()
   return data;
 }
 ```
+
+
+
+**文本控件监听Ajax请求**
+```javascript
+{
+    content:function(set,timer){
+      timer(function(){
+        var doc = _$(".szxx-view").clone().remove();
+        doc.find("script").remove()
+        doc.find("img").each(function(){
+          _$(this).attr("src", _$(this).attr("ysrc")).removeAttr("ysrc")
+        });
+        
+        doc.find("[ystyle]").each(function(){
+          _$(this).attr("style", _$(this).attr("ystyle")).removeAttr("ystyle")
+        });
+        
+        set(doc.html())
+      },{
+        type:'xhr2', //xhr2,xhr,timer
+        xhr:{
+      		url:/\/xfdt\/servlet\/WstsServlet\?method=getwscx/,
+        	delay:100
+      	},
+      })
+			return '<p style="text-align:center;">正在加载……</p>'
+		},
+}
+
+```
