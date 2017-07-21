@@ -83,6 +83,18 @@ function(){
 }
 ```
 
+**新闻列表，调整标题为一行，自动隐藏多余字符，把时间留出来**
+```javascript
+
+.Catlog58705  .nowrap{
+	white-space:nowrap; 
+	overflow:hidden; 
+	text-overflow:ellipsis;
+	display: block;
+  padding-right:50px;
+}
+```
+
 **点击图片控件后，弹出二维码图片**
 ```javascript
 
