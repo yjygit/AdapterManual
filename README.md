@@ -157,3 +157,19 @@ function()
 }
 
 ```
+
+**高亮列表中指定字符**
+```javascript
+function(set,timer, event){
+  var r=[];
+  var val = '需要高亮的字符';
+  _$('.zcwj_list').find('a').each(function(){
+    r.push({
+        name:(_$(this).text()||'').replace(val,'<span style="color:#f00">'+val+'</span>'),//名称支持HTML标签的解析，可以将需要高亮的字符用span等标签包裹，然后在style属性中加上高亮的颜色或其他样式即可。
+	url:_$(this).attr('href'),
+        ctime:_$(this).parent().find('span').text(),
+        pic:false
+      });
+  });
+}
+```
